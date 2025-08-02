@@ -7,10 +7,10 @@ import { FaRobot, FaTimes, FaPaperPlane } from 'react-icons/fa';
 const Chatbot = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState([
-    { id: 1, sender: 'bot', text: 'Halo! Saya Asisten AI. Ada yang bisa saya bantu seputar pelajaran?' }
+    { id: 1, sender: 'bot', text: 'Halo! Saya Asisten AI. Ada yang bisa saya bantu seputar fitur sekolah atau pelajaran?' }
   ]);
   const [inputValue, setInputValue] = useState('');
-  const [isTyping, setIsTyping] = useState(false);
+  const [isLoading, setIsLoading] = useState(false); // State untuk simulasi "berpikir"
 
   const messagesEndRef = useRef(null);
 
@@ -21,52 +21,57 @@ const Chatbot = () => {
 
   useEffect(scrollToBottom, [messages]);
 
-  // Simulasi logika AI untuk memberikan respons
+  // =======================================================================
+  // "OTAK" DUMMY CHATBOT - SEMUA LOGIKA ADA DI SINI
+  // =======================================================================
   const getBotResponse = (userInput) => {
     const input = userInput.toLowerCase();
-    if (input.includes('matematika')) {
-      return 'Tentu! Matematika adalah studi tentang angka, struktur, dan ruang. Topik populer termasuk Aljabar, Geometri, dan Kalkulus. Apa yang ingin kamu tahu lebih spesifik?';
+    
+    if (input.includes('matematika') || input.includes('kalkulus')) {
+      return 'Tentu! Matematika adalah studi tentang angka dan struktur. Di sekolah kita, fokusnya pada pemecahan masalah melalui Aljabar dan Kalkulus untuk persiapan kuliah.';
     }
-    if (input.includes('fisika')) {
-      return 'Fisika mempelajari materi, energi, dan interaksinya. Konsep kunci meliputi Hukum Newton, Termodinamika, dan Relativitas. Ada topik Fisika tertentu yang menarik minatmu?';
+    if (input.includes('fisika') || input.includes('newton')) {
+      return 'Fisika mempelajari interaksi materi dan energi. Konsep kunci seperti Hukum Newton adalah fondasi untuk memahami dunia di sekitar kita.';
     }
-    if (input.includes('sejarah')) {
-      return 'Sejarah adalah jendela masa lalu. Di sekolah kita, kita mempelajari Sejarah Indonesia, mulai dari era kerajaan hingga kemerdekaan. Apakah ada periode spesifik yang ingin kamu diskusikan?';
+    if (input.includes('kehadiran') || input.includes('wajah') || input.includes('absensi')) {
+      return 'Sistem Kehadiran Wajah menggunakan AI untuk mendeteksi dan mencatat absensi secara otomatis, sehingga lebih cepat dan akurat.';
+    }
+    if (input.includes('dashboard') || input.includes('perkembangan anak')) {
+      return 'Sekolah kami menyediakan Dashboard Siswa dan Portal Orang Tua untuk memantau perkembangan akademik, kehadiran, dan melihat rekomendasi belajar dari AI.';
     }
     if (input.includes('terima kasih') || input.includes('thanks')) {
-        return 'Sama-sama! Senang bisa membantu.';
+        return 'Sama-sama! Senang bisa membantu. Ada lagi yang ingin ditanyakan?';
     }
     if (input.includes('halo') || input.includes('hai')) {
-        return 'Halo juga! Ada yang bisa saya bantu?';
+        return 'Halo juga! Silakan tanya tentang fitur sekolah atau mata pelajaran.';
     }
-    return 'Maaf, saya belum mengerti pertanyaan itu. Coba tanyakan tentang "matematika", "fisika", atau "sejarah".';
+    
+    // Jawaban default jika tidak ada kata kunci yang cocok
+    return 'Maaf, saya belum mengerti pertanyaan itu. Anda bisa bertanya tentang: "matematika", "fisika", "sistem kehadiran", atau "dashboard".';
   };
 
   const handleSendMessage = (e) => {
     e.preventDefault();
-    if (inputValue.trim() === '') return;
+    if (inputValue.trim() === '' || isLoading) return;
 
-    // Tambahkan pesan pengguna ke daftar
     const userMessage = { id: Date.now(), sender: 'user', text: inputValue };
     setMessages(prev => [...prev, userMessage]);
     
-    // Simulasikan bot sedang mengetik
-    setIsTyping(true);
     const userText = inputValue;
     setInputValue('');
+    setIsLoading(true); // Mulai loading (bot "berpikir")
 
-    // Simulasikan respons bot setelah jeda
+    // Simulasi jeda waktu untuk bot berpikir
     setTimeout(() => {
       const botResponseText = getBotResponse(userText);
       const botMessage = { id: Date.now() + 1, sender: 'bot', text: botResponseText };
       setMessages(prev => [...prev, botMessage]);
-      setIsTyping(false);
+      setIsLoading(false); // Selesai loading
     }, 1500); // Jeda 1.5 detik
   };
 
   return (
     <>
-      {/* Jendela Chat */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
@@ -76,15 +81,11 @@ const Chatbot = () => {
             transition={{ duration: 0.3 }}
             className="fixed bottom-24 right-5 w-80 h-[28rem] bg-white rounded-xl shadow-2xl flex flex-col z-50"
           >
-            {/* Header Chat */}
             <header className="bg-primary text-white p-4 rounded-t-xl flex justify-between items-center">
               <h3 className="font-poppins font-bold text-lg">Asisten AI Edukasi</h3>
-              <button onClick={() => setIsOpen(false)} className="hover:text-gray-300">
-                <FaTimes size={20} />
-              </button>
+              <button onClick={() => setIsOpen(false)}><FaTimes size={20} /></button>
             </header>
 
-            {/* Area Pesan */}
             <main className="flex-1 p-4 overflow-y-auto">
               {messages.map(msg => (
                 <div key={msg.id} className={`flex mb-4 ${msg.sender === 'user' ? 'justify-end' : 'justify-start'}`}>
@@ -93,7 +94,9 @@ const Chatbot = () => {
                   </div>
                 </div>
               ))}
-              {isTyping && (
+              
+              {/* Indikator Mengetik ... */}
+              {isLoading && (
                  <div className="flex justify-start mb-4">
                     <div className="bg-gray-200 rounded-lg p-3">
                         <div className="flex items-center space-x-1">
@@ -107,18 +110,15 @@ const Chatbot = () => {
               <div ref={messagesEndRef} />
             </main>
 
-            {/* Input Form */}
-            <footer className="p-4 border-t border-gray-200">
+            <footer className="p-4 border-t">
               <form onSubmit={handleSendMessage} className="flex items-center">
                 <input
-                  type="text"
-                  value={inputValue}
-                  onChange={(e) => setInputValue(e.target.value)}
+                  type="text" value={inputValue} onChange={(e) => setInputValue(e.target.value)}
                   placeholder="Ketik pertanyaanmu..."
                   className="w-full px-4 py-2 border rounded-full focus:outline-none focus:ring-2 focus:ring-primary"
-                  autoComplete="off"
+                  autoComplete="off" disabled={isLoading}
                 />
-                <button type="submit" className="ml-3 bg-accent text-white p-3 rounded-full hover:bg-orange-500 transition-colors">
+                <button type="submit" className="ml-3 bg-accent text-white p-3 rounded-full hover:bg-orange-500 transition-colors disabled:bg-gray-400" disabled={isLoading}>
                   <FaPaperPlane />
                 </button>
               </form>
@@ -127,12 +127,10 @@ const Chatbot = () => {
         )}
       </AnimatePresence>
 
-      {/* Tombol Ikon Chatbot */}
       <motion.button
         onClick={() => setIsOpen(!isOpen)}
         className="fixed bottom-5 right-5 bg-primary text-white w-16 h-16 rounded-full shadow-lg flex items-center justify-center z-50"
-        whileHover={{ scale: 1.1 }}
-        whileTap={{ scale: 0.9 }}
+        whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}
       >
         {isOpen ? <FaTimes size={24} /> : <FaRobot size={24} />}
       </motion.button>
