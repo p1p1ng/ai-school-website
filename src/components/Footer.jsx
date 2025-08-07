@@ -8,7 +8,7 @@ const Footer = () => {
       <div className="container mx-auto py-12 px-6">
         <div className="grid md:grid-cols-3 gap-8 text-center md:text-left">
           <div>
-            <h3 className="text-xl font-poppins font-bold mb-4">SekolahAI</h3>
+            <h3 className="text-xl font-poppins font-bold mb-4">AI-Driven Education</h3>
             <p className="text-gray-400">Membentuk masa depan pendidikan melalui teknologi cerdas.</p>
           </div>
           <div>
@@ -31,7 +31,7 @@ const Footer = () => {
           </div>
         </div>
         <div className="border-t border-gray-700 mt-10 pt-6 text-center text-gray-500 text-sm">
-          <p>&copy; {new Date().getFullYear()} SekolahAI. Semua Hak Cipta Dilindungi.</p>
+          <p>&copy; {new Date().getFullYear()} AI-Driven Education. Semua Hak Cipta Dilindungi.</p>
         </div>
       </div>
     </footer>

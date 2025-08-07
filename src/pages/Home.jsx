@@ -54,7 +54,7 @@ const Home = () => {
             >
               <Link 
                 to="/fitur" 
-                className="mt-8 bg-accent text-white font-bold py-3 px-8 rounded-full shadow-lg hover:bg-orange-500 transition-all duration-300 inline-flex items-center text-lg"
+                className="mt-8 bg-orange-600 text-white font-bold py-3 px-8 rounded-full shadow-lg hover:bg-orange-500 transition-all duration-300 inline-flex items-center text-lg"
               >
                 Lihat Bagaimana Kami Menggunakan AI <FaArrowRight className="ml-2" />
               </Link>
@@ -67,7 +67,7 @@ const Home = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             {/* Ganti 'heroImage' dengan path gambar Anda */}
-            <img src="https://via.placeholder.com/600x400.png?text=Ilustrasi+Siswa+dan+Guru" alt="AI in Education" className="rounded-lg shadow-2xl mx-auto" />
+            <img src={heroImage} alt="AI in Education" className="rounded-lg shadow-2xl mx-auto" />
              {/* Icon AI sebagai elemen dekoratif */}
             <div className="absolute -top-8 -right-8 bg-white p-4 rounded-full shadow-lg">
                 <FaDatabase className="text-primary text-4xl" />
@@ -121,7 +121,7 @@ const Home = () => {
             transition={{ duration: 0.8 }}
           >
             {/* Ganti 'illustrationImage' dengan path gambar Anda */}
-            <img src="https://via.placeholder.com/550x350.png?text=Animasi+AI+di+Kelas" alt="AI in classroom" className="rounded-lg shadow-xl w-full" />
+            <img src={illustrationImage} alt="AI in classroom" className="rounded-lg shadow-xl w-full" />
             <div className="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center rounded-lg transition-opacity duration-300 group-hover:bg-opacity-50">
               <FaPlayCircle className="text-white text-7xl opacity-80 group-hover:opacity-100 transform group-hover:scale-110 transition-transform" />
             </div>

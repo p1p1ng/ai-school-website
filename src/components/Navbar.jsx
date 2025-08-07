@@ -20,7 +20,7 @@ const Navbar = () => {
     <nav className="bg-light/80 backdrop-blur-lg shadow-md sticky top-0 z-50">
       <div className="container mx-auto px-6 py-3 flex justify-between items-center">
         <Link to="/" className="text-2xl font-poppins font-bold text-primary">
-          SekolahAI
+          AI-Driven Education
         </Link>
         <div className="hidden md:flex items-center space-x-6">
           {navLinks.map((link) => (

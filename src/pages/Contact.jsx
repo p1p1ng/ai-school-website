@@ -45,7 +45,7 @@ const Contact = () => {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <div className="bg-primary text-white p-8 rounded-lg shadow-lg h-full">
+          <div className="bg-primary text-poppins p-8 rounded-lg shadow-lg h-full">
             <h2 className="text-2xl font-poppins font-bold mb-6">Informasi Kontak</h2>
             <div className="flex items-center mb-4">
               <FaMapMarkerAlt className="text-2xl mr-4" />
@@ -57,7 +57,7 @@ const Contact = () => {
             </div>
             <div className="flex items-center mb-6">
               <FaEnvelope className="text-2xl mr-4" />
-              <p>info@sekolah.ai</p>
+              <p>info@driven-edu.ai</p>
             </div>
             <h3 className="text-xl font-poppins font-bold mb-4">Ikuti Kami</h3>
             <div className="flex gap-4">

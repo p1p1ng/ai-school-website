@@ -34,11 +34,37 @@ const allFeaturesData = [
     title: "Rekomendasi Jurusan",
     description: "Memberikan rekomendasi studi lanjut yang dipersonalisasi.",
     details: {
-      longDescription: "Memberikan rekomendasi jurusan kuliah dan studi lanjut yang paling sesuai dengan profil unik setiap siswa.",
+      longDescription: "Berdasarkan profil minat, bakat, dan performa akademik, sistem AI kami menganalisis dan merekomendasikan jurusan kuliah yang paling sesuai untuk masa depan siswa.",
       howItWorks: ["Menganalisis hasil tes minat bakat.", "Mencocokkan dengan performa akademik.", "Memberikan 3 rekomendasi teratas beserta jalur karirnya."],
       techStack: ["Python", "Scikit-learn", "API Kampus"],
-      visualization: { type: 'default' },
-      aiInsight: "Jurusan Teknik Informatika, DKV, dan Manajemen Bisnis adalah pilihan yang sangat cocok."
+      // --- PERBARUI BAGIAN VISUALIZATION DI BAWAH INI ---
+      visualization: {
+        type: 'recommendation_list',
+        data: [
+          {
+            major: 'Teknik Informatika',
+            matchScore: 95,
+            reasons: ['Bakat Logika-Matematika tinggi', 'Minat pada teknologi', 'Pola pikir sistematis'],
+            careers: ['Software Engineer', 'Data Scientist', 'IT Consultant'],
+            color: 'blue'
+          },
+          {
+            major: 'Desain Komunikasi Visual (DKV)',
+            matchScore: 88,
+            reasons: ['Bakat Kreativitas & Visual menonjol', 'Menyukai seni dan media', 'Kemampuan bercerita visual'],
+            careers: ['Graphic Designer', 'UI/UX Designer', 'Animator'],
+            color: 'orange'
+          },
+          {
+            major: 'Manajemen Bisnis',
+            matchScore: 82,
+            reasons: ['Kemampuan Linguistik baik', 'Tertarik pada strategi & kepemimpinan', 'Pola pikir terorganisir'],
+            careers: ['Business Analyst', 'Marketing Manager', 'Entrepreneur'],
+            color: 'green'
+          }
+        ]
+      },
+      aiInsight: "Tiga jurusan di atas memiliki tingkat kecocokan tertinggi dengan profil siswa saat ini. Teknik Informatika menjadi rekomendasi utama karena sinergi kuat antara bakat logika dan minat pada teknologi."
     }
   },
   {
@@ -60,11 +86,36 @@ const allFeaturesData = [
     title: "Dashboard Orang Tua & Guru",
     description: "Notifikasi cerdas dan laporan perkembangan real-time.",
     details: {
-      longDescription: "Sebuah portal terpusat yang menyajikan data perkembangan siswa secara real-time dengan notifikasi cerdas.",
-      howItWorks: ["Mengagregasi data dari berbagai sistem.", "Menyajikannya dalam bentuk grafik yang mudah dibaca.", "Mengirim notifikasi otomatis untuk isu penting."],
-      techStack: ["React", "Node.js", "MongoDB"],
-      visualization: { type: 'default' },
-      aiInsight: "Notifikasi cerdas telah dikirim ke orang tua mengenai tugas Matematika yang akan datang."
+      longDescription: "Sebuah portal terpusat yang menyajikan data perkembangan siswa secara real-time dengan notifikasi cerdas, membantu orang tua dan guru untuk berkolaborasi dalam mendukung kesuksesan siswa.",
+      howItWorks: ["Mengagregasi data dari berbagai sistem (kehadiran, nilai, tugas).", "Menyajikannya dalam bentuk grafik dan ringkasan yang mudah dibaca.", "Mengirim notifikasi otomatis untuk pencapaian atau isu penting."],
+      techStack: ["React", "Node.js", "MongoDB", "FCM"],
+      // --- PERBARUI BAGIAN VISUALIZATION DI BAWAH INI ---
+      visualization: {
+        type: 'dashboard_preview',
+        data: [
+          {
+            metric: 'Notifikasi Cerdas Terkirim',
+            value: '12',
+            iconName: 'FaBell'
+          },
+          {
+            metric: 'Laporan Dilihat Orang Tua',
+            value: '8',
+            iconName: 'FaEye'
+          },
+          {
+            metric: 'Analisis Perilaku Positif',
+            value: 'Naik 15%',
+            iconName: 'FaSmile'
+          },
+          {
+            metric: 'Performa Akademik',
+            value: 'Stabil',
+            iconName: 'FaChartLine'
+          }
+        ]
+      },
+      aiInsight: "Sistem mendeteksi adanya peningkatan partisipasi di kelas Fisika. Notifikasi pencapaian telah disiapkan untuk dikirim ke orang tua."
     }
   },
   {
@@ -73,11 +124,30 @@ const allFeaturesData = [
     title: "Progress Report Otomatis",
     description: "Menghasilkan laporan kemajuan siswa secara otomatis.",
     details: {
-      longDescription: "Sistem yang secara otomatis menghasilkan laporan kemajuan belajar siswa dalam format PDF yang siap dibagikan.",
-      howItWorks: ["Menarik data nilai dan kehadiran.", "Menyusunnya ke dalam template laporan.", "Guru dapat mengirimkannya ke orang tua dengan satu klik."],
-      techStack: ["Node.js", "Puppeteer", "MongoDB"],
-      visualization: { type: 'default' },
-      aiInsight: "Laporan kemajuan untuk bulan Juni telah berhasil dibuat untuk 98% siswa."
+      longDescription: "Sistem AI secara otomatis mengkompilasi data performa, kehadiran, dan partisipasi siswa untuk menghasilkan laporan kemajuan yang komprehensif dalam format PDF setiap periode.",
+      howItWorks: ["Menarik data nilai dan kehadiran.", "Menganalisis pencapaian dan area peningkatan.", "Menyusunnya ke dalam template laporan profesional.", "Guru dapat meninjau dan mengirimkannya ke orang tua dengan satu klik."],
+      techStack: ["Node.js", "Puppeteer", "MongoDB", "Recharts"],
+      // --- PERBARUI BAGIAN VISUALIZATION DI BAWAH INI ---
+      visualization: {
+        type: 'report_preview',
+        data: {
+          studentName: 'Andi Pratama',
+          period: 'Semester Ganjil - 2025',
+          highlights: [
+            'Peningkatan signifikan pada Fisika (+12%)',
+            'Kehadiran 100% pada bulan Juni & Juli',
+            'Proyek Sejarah mendapat nilai A',
+            'Keaktifan di kelas meningkat'
+          ],
+          performanceData: [
+            { subject: 'Matematika', score: 88, target: 85 },
+            { subject: 'Fisika', score: 92, target: 85 },
+            { subject: 'Kimia', score: 81, target: 85 },
+            { subject: 'Sejarah', score: 95, target: 90 },
+          ]
+        }
+      },
+      aiInsight: "Laporan kemajuan untuk Andi Pratama periode Semester Ganjil 2025 telah berhasil dibuat. Terdapat tren peningkatan yang kuat pada mata pelajaran sains."
     }
   },
 ];
