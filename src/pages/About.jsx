@@ -2,6 +2,8 @@
 
 import { motion } from 'framer-motion';
 import { FaFlag, FaRocket, FaUsers } from 'react-icons/fa';
+import KepalaSekolah from '../assets/kepala-sekolah.png';
+import VisiMisi from '../assets/visi-misi.png';
 
 const About = () => {
   return (
@@ -50,7 +52,7 @@ const About = () => {
           </div>
           <div>
             {/* Placeholder untuk ilustrasi atau gambar */}
-            <img src="https://via.placeholder.com/500x350" alt="Visi dan Misi" className="rounded-lg shadow-xl" />
+            <img src={VisiMisi} alt="Visi dan Misi" className="rounded-lg shadow-xl" />
           </div>
         </div>
       </section>
@@ -59,7 +61,7 @@ const About = () => {
       <section className="bg-gray-50 py-20 px-4">
         <div className="container mx-auto flex flex-col md:flex-row items-center gap-10">
           <motion.img 
-            src="https://via.placeholder.com/250" 
+            src={KepalaSekolah} 
             alt="Kepala Sekolah" 
             className="w-48 h-48 rounded-full shadow-lg object-cover"
             initial={{ scale: 0.5, opacity: 0 }}

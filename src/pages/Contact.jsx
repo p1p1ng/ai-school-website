@@ -33,7 +33,7 @@ const Contact = () => {
               <label htmlFor="message" className="block text-gray-700 font-bold mb-2">Pesan</label>
               <textarea id="message" rows="5" className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"></textarea>
             </div>
-            <button type="submit" className="w-full bg-accent text-white font-bold py-3 px-6 rounded-lg hover:bg-orange-500 transition-colors">
+            <button type="submit" className="w-full bg-orange-600 text-white font-bold py-3 px-6 rounded-lg hover:bg-orange-500 transition-colors">
               Kirim
             </button>
           </form>

@@ -4,9 +4,9 @@ import { motion } from 'framer-motion';
 import { FaQuoteLeft } from 'react-icons/fa';
 
 const testimonials = [
-  { name: 'Rina Wijayanti', role: 'Guru Matematika', text: 'Sistem analisis AI sangat membantu saya mengidentifikasi siswa yang butuh perhatian lebih. Waktu saya jadi lebih efisien!', avatar: 'https://i.pravatar.cc/150?img=1' },
+  { name: 'Rina Wijayanti', role: 'Guru Matematika', text: 'Sistem analisis AI sangat membantu saya mengidentifikasi siswa yang butuh perhatian lebih. Waktu saya jadi lebih efisien!', avatar: 'https://i.pravatar.cc/150?img=19' },
   { name: 'Andi Pratama', role: 'Siswa Kelas 12', text: 'Rekomendasi jurusan dari AI benar-benar membuka mata saya. Sekarang saya lebih yakin dengan pilihan studi saya.', avatar: 'https://i.pravatar.cc/150?img=2' },
-  { name: 'Ibu Siti', role: 'Orang Tua Murid', text: 'Dashboard orang tua sangat informatif. Saya bisa memantau perkembangan anak saya kapan saja dengan mudah.', avatar: 'https://i.pravatar.cc/150?img=3' },
+  { name: 'Ibu Siti', role: 'Orang Tua Murid', text: 'Dashboard orang tua sangat informatif. Saya bisa memantau perkembangan anak saya kapan saja dengan mudah.', avatar: 'https://i.pravatar.cc/150?img=5' },
 ];
 
 const Testimonials = () => {

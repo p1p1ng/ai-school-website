@@ -5,10 +5,10 @@ import { useState } from 'react';
 
 // Data dummy untuk artikel blog
 const articles = [
-  { id: 1, title: 'Peran AI dalam Meningkatkan Minat Belajar', category: 'AI', image: 'https://via.placeholder.com/400x250', excerpt: 'Kecerdasan buatan membuka pintu baru untuk metode belajar yang lebih interaktif dan menarik bagi siswa...' },
-  { id: 2, title: 'Bagaimana Big Data Membantu Guru Mengajar', category: 'Big Data', image: 'https://via.placeholder.com/400x250', excerpt: 'Dengan analisis data, guru dapat memahami kebutuhan setiap siswa secara mendalam dan menyesuaikan...' },
-  { id: 3, title: 'Etika AI di Lingkungan Sekolah', category: 'AI', image: 'https://via.placeholder.com/400x250', excerpt: 'Pentingnya menerapkan AI secara etis untuk melindungi privasi dan keadilan bagi seluruh civitas akademika...' },
-  { id: 4, title: 'Masa Depan EduTech: Apa Selanjutnya?', category: 'EduTech', image: 'https://via.placeholder.com/400x250', excerpt: 'Tren teknologi pendidikan terus berkembang. Mari kita lihat apa yang akan datang di horizon...' },
+  { id: 1, title: 'Peran AI dalam Meningkatkan Minat Belajar', category: 'AI', image: 'https://weathervane-chx.com/wp-content/uploads/2016/12/400x250.png', excerpt: 'Kecerdasan buatan membuka pintu baru untuk metode belajar yang lebih interaktif dan menarik bagi siswa...' },
+  { id: 2, title: 'Bagaimana Big Data Membantu Guru Mengajar', category: 'Big Data', image: 'https://weathervane-chx.com/wp-content/uploads/2016/12/400x250.png', excerpt: 'Dengan analisis data, guru dapat memahami kebutuhan setiap siswa secara mendalam dan menyesuaikan...' },
+  { id: 3, title: 'Etika AI di Lingkungan Sekolah', category: 'AI', image: 'https://weathervane-chx.com/wp-content/uploads/2016/12/400x250.png', excerpt: 'Pentingnya menerapkan AI secara etis untuk melindungi privasi dan keadilan bagi seluruh civitas akademika...' },
+  { id: 4, title: 'Masa Depan EduTech: Apa Selanjutnya?', category: 'EduTech', image: 'https://weathervane-chx.com/wp-content/uploads/2016/12/400x250.png', excerpt: 'Tren teknologi pendidikan terus berkembang. Mari kita lihat apa yang akan datang di horizon...' },
 ];
 
 const Blog = () => {
@@ -27,10 +27,10 @@ const Blog = () => {
 
       {/* Filter Kategori */}
       <div className="flex justify-center gap-4 mb-12">
-        <button onClick={() => setFilter('All')} className={`px-6 py-2 rounded-full font-semibold ${filter === 'All' ? 'bg-primary text-white' : 'bg-gray-200'}`}>Semua</button>
-        <button onClick={() => setFilter('AI')} className={`px-6 py-2 rounded-full font-semibold ${filter === 'AI' ? 'bg-primary text-white' : 'bg-gray-200'}`}>AI</button>
-        <button onClick={() => setFilter('Big Data')} className={`px-6 py-2 rounded-full font-semibold ${filter === 'Big Data' ? 'bg-primary text-white' : 'bg-gray-200'}`}>Big Data</button>
-        <button onClick={() => setFilter('EduTech')} className={`px-6 py-2 rounded-full font-semibold ${filter === 'EduTech' ? 'bg-primary text-white' : 'bg-gray-200'}`}>EduTech</button>
+        <button onClick={() => setFilter('All')} className={`px-6 py-2 rounded-full font-semibold ${filter === 'All' ? 'bg-gray-100 text-poppins' : 'bg-gray-200'}`}>Semua</button>
+        <button onClick={() => setFilter('AI')} className={`px-6 py-2 rounded-full font-semibold ${filter === 'AI' ? 'bg-gray-100 text-poppins' : 'bg-gray-200'}`}>AI</button>
+        <button onClick={() => setFilter('Big Data')} className={`px-6 py-2 rounded-full font-semibold ${filter === 'Big Data' ? 'bg-gray-100 text-poppins' : 'bg-gray-200'}`}>Big Data</button>
+        <button onClick={() => setFilter('EduTech')} className={`px-6 py-2 rounded-full font-semibold ${filter === 'EduTech' ? 'bg-gray-100 text-poppins' : 'bg-gray-200'}`}>EduTech</button>
       </div>
 
       {/* Daftar Artikel */}

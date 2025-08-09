@@ -45,15 +45,15 @@ const Reports = () => {
 
       {/* Statistik Lainnya */}
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <div className="bg-secondary text-white p-8 rounded-lg shadow-lg">
+        <div className="bg-secondary text-poppins p-8 rounded-lg shadow-lg">
           <p className="text-5xl font-bold">99.2%</p>
           <p className="mt-2 text-xl font-poppins">Tingkat Kehadiran</p>
         </div>
-         <div className="bg-primary text-white p-8 rounded-lg shadow-lg">
+         <div className="bg-primary text-poppins p-8 rounded-lg shadow-lg">
           <p className="text-5xl font-bold">-75%</p>
           <p className="mt-2 text-xl font-poppins">Penurunan Keterlambatan</p>
         </div>
-        <div className="bg-accent text-white p-8 rounded-lg shadow-lg">
+        <div className="bg-accent text-poppins p-8 rounded-lg shadow-lg">
           <p className="text-5xl font-bold">8/10</p>
           <p className="mt-2 text-xl font-poppins">Alumni di Jurusan Pilihan</p>
         </div>
