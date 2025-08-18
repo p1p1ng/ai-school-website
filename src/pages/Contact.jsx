@@ -49,7 +49,7 @@ const Contact = () => {
             <h2 className="text-2xl font-poppins font-bold mb-6">Informasi Kontak</h2>
             <div className="flex items-center mb-4">
               <FaMapMarkerAlt className="text-2xl mr-4" />
-              <p>Jl. Pendidikan No. 123, Jakarta, Indonesia</p>
+              <p>Jl. Pendidikan No. 123, Banyuwangi, Indonesia</p>
             </div>
             <div className="flex items-center mb-4">
               <FaPhone className="text-2xl mr-4" />

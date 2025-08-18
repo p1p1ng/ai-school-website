@@ -12,7 +12,7 @@ import Reports from './pages/Reports';
 import Blog from './pages/Blog';
 import Testimonials from './pages/Testimonials';
 import Contact from './pages/Contact';
-import Dashboard from './pages/Dashboard';
+import DashboardSiswa from './pages/DashboardSiswa';
 import ParentAnalytics from './pages/ParentAnalytics';
 import FeatureDetailPage from './pages/FeatureDetailPage';
 
@@ -30,7 +30,7 @@ const AnimatedRoutes = () => {
         <Route path="/blog" element={<Blog />} />
         <Route path="/testimoni" element={<Testimonials />} />
         <Route path="/kontak" element={<Contact />} />
-        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/dashboard" element={<DashboardSiswa />} />
         <Route path="/ortu/analytics" element={<ParentAnalytics />} />
       </Routes>
     </AnimatePresence>
